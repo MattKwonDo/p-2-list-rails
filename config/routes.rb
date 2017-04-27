@@ -1,5 +1,9 @@
 # frozen_string_literal: true
+# from https://devcenter.heroku.com/articles/getting-started-with-rails5
+# root 'welcome#index'
+
 Rails.application.routes.draw do
+  resources :items, except: [:new, :edit]
   resources :examples, except: [:new, :edit]
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'

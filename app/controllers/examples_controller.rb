@@ -19,6 +19,7 @@ class ExamplesController < OpenReadController
   # POST /examples
   # POST /examples.json
   def create
+    # this creates the user id and params! user id should be set by authentication token
     @example = current_user.examples.build(example_params)
 
     if @example.save
@@ -47,7 +48,10 @@ class ExamplesController < OpenReadController
   end
 
   def set_example
+    # finds user object . retrun the many examples . find the one with the id i'm looking for
+    # allows you to filter out things that don't belong to the current_user
     @example = current_user.examples.find(params[:id])
+    # current_user.examples > return all examples
   end
 
   def example_params

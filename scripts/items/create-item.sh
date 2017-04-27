@@ -1,15 +1,18 @@
 #!/bin/bash
 
 API="${API_ORIGIN:-http://localhost:4741}"
-URL_PATH="/examples"
+URL_PATH="/items"
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
-    "example": {
-      "text": "'"${TEXT}"'"
+    "item": {
+      "item_name": "gloves",
+      "user_id": "1",
+      "created_at": "2017-04-27 16:50:06.865466",
+      "updated_at": "2017-04-27 16:50:06.865466"
     }
   }'
 
