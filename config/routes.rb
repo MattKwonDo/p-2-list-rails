@@ -3,7 +3,7 @@
 # root 'welcome#index'
 
 Rails.application.routes.draw do
-  resources :new_items, except: [:new, :edit]
+  resources :new_items, except: [:new, :edit] # show, index, create, update, destroy
   resources :items, except: [:new, :edit]
   resources :examples, except: [:new, :edit]
   post '/sign-up' => 'users#signup'
