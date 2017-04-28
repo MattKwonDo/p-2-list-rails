@@ -17,3 +17,31 @@
 #                password: 'abc123',
 #                password_confirmation: nil)
 # end
+
+New_items.create([
+               { given_name: 'Amanda',
+                 family_name: 'A',
+                 nickname: 'A',
+                  born_on: '2017-01-01',
+                   user_id: 1},
+               { given_name: 'Amanda',
+                 family_name: 'B',
+                nickname: 'B',
+                born_on: '2017-01-02',
+                 user_id: 1},
+               { given_name: 'Amanda',
+                 family_name: 'C',
+                nickname: 'C',
+                born_on: '2017-01-03',
+                 user_id: 1},
+               { given_name: 'Amanda',
+                 family_name: 'D',
+                nickname: 'D',
+                born_on: '2017-01-04',
+                user_id:1 },
+               { given_name: 'Amanda',
+                 family_name: 'E',
+                nickname: 'E',
+                born_on: '2017-01-05',
+                 user_id: 1}
+             ])

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+TOKEN="BAhJIiU1Yjg3ZTE2N2JjYmM1OWM1MzFjZDhiZDY5NDkxOGNkZQY6BkVG--5a0ddcefbd32d886368b1f74dd9b77faa90b7ebe"
 API="${API_ORIGIN:-http://localhost:4741}"
 URL_PATH="/new_items"
 curl "${API}${URL_PATH}" \
@@ -8,11 +9,11 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
-    "item": {
-      "name": "gloves",
-      "user_id": "1"
+    "new_item": {
+      "name": "gloves"
     }
   }'
+
 
   echo
 

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-class NewItemsController < ApplicationController
+class NewItemsController < OpenReadController
   before_action :set_new_item, only: [:show, :update, :destroy]
 
   # GET /new_items
   def index
-    # @new_items = NewItem.all
-    @new_items = current_user.new_items
+    @new_items = NewItem.all
+    # @new_items = current_user.new_item
 
     render json: @new_items
   end
@@ -18,9 +18,9 @@ class NewItemsController < ApplicationController
 
   # POST /new_items
   def create
-    # get 400 error with this
-    # @new_item = NewItem.new(new_item_params)
-    # get 500 error with this
+    # get 401 error with this
+    # @new_item = New_item.new(new_item_params)
+    # got this to work
     @new_item = current_user.new_items.build(new_item_params)
 
     if @new_item.save
@@ -47,7 +47,7 @@ class NewItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_new_item
-      # @new_item = NewItem.find(params[:id])
+      # @new_item = New_item.find(params[:id])
       @new_item = current_user.new_items.find(params[:id])
     end
 
