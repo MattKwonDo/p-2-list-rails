@@ -6,7 +6,7 @@ class NewItemsController < OpenReadController
   # GET /new_items
   def index
     # @new_items = NewItem.all
-    @new_items = current_user.new_items
+    @new_items = current_user.new_items.order(:id) # .order(:id)
 
     render json: @new_items
   end
