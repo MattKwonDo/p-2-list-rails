@@ -1,5 +1,31 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
+# Overview
+This is the backend for my project 2 [list app](https://mattkwondo.github.io/p-2-list-browser/). Link to the front-end with details is [here](https://github.com/MattKwonDo/p-2-list-browser).
+
+# Routes
+Prefix Verb   URI Pattern                    Controller#Action
+new_items GET    /new_items(.:format)           new_items#index
+          POST   /new_items(.:format)           new_items#create
+ new_item GET    /new_items/:id(.:format)       new_items#show
+          PATCH  /new_items/:id(.:format)       new_items#update
+          PUT    /new_items/:id(.:format)       new_items#update
+          DELETE /new_items/:id(.:format)       new_items#destroy
+ examples GET    /examples(.:format)            examples#index
+          POST   /examples(.:format)            examples#create
+  example GET    /examples/:id(.:format)        examples#show
+          PATCH  /examples/:id(.:format)        examples#update
+          PUT    /examples/:id(.:format)        examples#update
+          DELETE /examples/:id(.:format)        examples#destroy
+  sign_up POST   /sign-up(.:format)             users#signup
+  sign_in POST   /sign-in(.:format)             users#signin
+          DELETE /sign-out/:id(.:format)        users#signout
+          PATCH  /change-password/:id(.:format) users#changepw
+    users GET    /users(.:format)               users#index
+     user GET    /users/:id(.:format)           users#show
+
+
+# Default info below
 # rails-api-template
 
 A template for starting projects with `rails-api`. Includes authentication.
