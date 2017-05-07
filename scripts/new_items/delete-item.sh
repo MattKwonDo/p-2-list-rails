@@ -10,3 +10,16 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Content-Type: application/json" \
 
 echo
+
+# to heroku: https://ski-list.herokuapp.com
+TOKEN="BAhJIiU1NzlmZTAyZjRlYWM4OGFmMTcxODZmMjgzZmIwNTQyMQY6BkVG--ca526f229d6a10114dbc37378beb6d7cc0da0419"
+ID=29
+API="${API_ORIGIN:-https://ski-list.herokuapp.com}"
+URL_PATH="/new_items"
+curl "${API}${URL_PATH}/${ID}" \
+  --include \
+  --request DELETE \
+  --header "Authorization: Token token=${TOKEN}" \
+  --header "Content-Type: application/json" \
+
+echo
