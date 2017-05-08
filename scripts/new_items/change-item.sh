@@ -20,23 +20,23 @@ echo
 
 # to heroku: https://ski-list.herokuapp.com
 
-  API="${API_ORIGIN:-https://ski-list.herokuapp.com}"
-  URL_PATH="/new_items"
-  ID=35
-  TOKEN="BAhJIiU1NzlmZTAyZjRlYWM4OGFmMTcxODZmMjgzZmIwNTQyMQY6BkVG--ca526f229d6a10114dbc37378beb6d7cc0da0419"
-  PARAMETER="new_item"
-  NAME_1="name"
-  NAME_1_VALUE="not allll the water"
+API="${API_ORIGIN:-https://ski-list.herokuapp.com}"
+URL_PATH="/new_items"
+ID=35
+TOKEN="BAhJIiU1NzlmZTAyZjRlYWM4OGFmMTcxODZmMjgzZmIwNTQyMQY6BkVG--ca526f229d6a10114dbc37378beb6d7cc0da0419"
+PARAMETER="new_item"
+NAME_1="name"
+NAME_1_VALUE="not allll the water"
 
-  curl "${API}${URL_PATH}/${ID}" \
-    --include \
-    --request PATCH \
-    --header "Authorization: Token token=${TOKEN}" \
-    --header "Content-Type: application/json" \
-    --data '{
-      "'"${PARAMETER}"'": {
-        "'"${NAME_1}"'": "'"${NAME_1_VALUE}"'"
-      }
-    }'
+curl "${API}${URL_PATH}/${ID}" \
+  --include \
+  --request PATCH \
+  --header "Authorization: Token token=${TOKEN}" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "'"${PARAMETER}"'": {
+      "'"${NAME_1}"'": "'"${NAME_1_VALUE}"'"
+    }
+  }'
 
   echo
